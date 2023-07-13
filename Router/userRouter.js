@@ -17,7 +17,7 @@ userRouter.get("/:id",async(req,res)=>{
     let data = await UserModel.find({_id:id})
     res.send(data)
 })
-userRouter.patch('/:id',async(req,res)=>{
+userRouter.put('/:id',async(req,res)=>{
     let id = req.params.id
     let payload = req.body
     await UserModel.findByIdAndUpdate({_id:id},payload)
